@@ -1,0 +1,138 @@
+{
+  "branding": {
+    "businessName": "Serenity Yoga",
+    "tagline": "Transform your mind, body, and soul with holistic yoga practices",
+    "logo": "public/vite.svg",
+    "favicon": "public/vite.svg"
+  },
+  "contact": {
+    "whatsapp": {
+      "number": "+1234567890",
+      "message": "Hi! I am interested in joining your yoga classes. Can you tell me more about your programs?"
+    },
+    "email": "hello@serenityoga.com",
+    "phone": "+1 (234) 567-8900",
+    "address": "123 Peaceful Lane, Wellness City, ZC 12345, United States"
+  },
+  "socialMedia": {
+    "whatsapp": "https://wa.me/1234567890",
+    "instagram": "https://instagram.com",
+    "twitter": "https://twitter.com",
+    "snapchat": "https://snapchat.com"
+  },
+  "businessHours": {
+    "weekday": "6:00 AM - 8:00 PM",
+    "saturday": "8:00 AM - 6:00 PM",
+    "sunday": "9:00 AM - 5:00 PM"
+  },
+  "colors": {
+    "primary": "#7b9a7f",
+    "primaryLight": "#a8c4a8",
+    "primaryDark": "#5a7a5e",
+    "accentWarm": "#d4a574",
+    "accentLight": "#e8d9c9",
+    "bgPrimary": "#f5f1e8",
+    "bgSecondary": "#fafaf8",
+    "textPrimary": "#2c2c2c",
+    "textSecondary": "#6b6b6b"
+  },
+  "files_to_customize": {
+    "whatsappNumber": {
+      "files": [
+        "src/components/Hero.jsx",
+        "src/components/Contact.jsx"
+      ],
+      "lineNumbers": "Around lines 59 and 9"
+    },
+    "heroCarousel": {
+      "file": "src/components/Hero.jsx",
+      "lineNumbers": "Lines 13-30",
+      "fields": ["title", "quote", "image", "color"]
+    },
+    "classes": {
+      "file": "src/components/Classes.jsx",
+      "lineNumbers": "Lines 14-75",
+      "fields": ["name", "description", "duration", "time", "mode", "level", "price"]
+    },
+    "testimonials": {
+      "file": "src/components/Testimonials.jsx",
+      "lineNumbers": "Lines 6-40",
+      "fields": ["name", "role", "text", "rating", "avatar"]
+    },
+    "faq": {
+      "file": "src/components/FAQ.jsx",
+      "lineNumbers": "Lines 6-40",
+      "fields": ["question", "answer"]
+    },
+    "contactInfo": {
+      "file": "src/components/Contact.jsx",
+      "lineNumbers": "Lines 39-81",
+      "fields": ["address", "hours", "email", "phone", "socialLinks"]
+    },
+    "colors": {
+      "file": "src/styles.css",
+      "lineNumbers": "Lines 1-20",
+      "fields": ["all CSS variables"]
+    }
+  },
+  "features": {
+    "header": {
+      "sticky": true,
+      "mobileMenu": true,
+      "smoothScroll": true
+    },
+    "hero": {
+      "autoPlay": true,
+      "autoPlayDuration": 5000,
+      "slides": 4,
+      "manualNavigation": true,
+      "mobileResponsive": true
+    },
+    "carousel": {
+      "transitionTime": "0.8s",
+      "dotIndicators": true,
+      "arrowButtons": true
+    },
+    "whatsappIntegration": {
+      "bookButton": true,
+      "contactLink": true,
+      "autoFillMessage": true
+    },
+    "responsiveBreakpoints": {
+      "tablet": "768px",
+      "mobile": "480px"
+    }
+  },
+  "seo": {
+    "title": "Serenity Yoga - Find Peace Within",
+    "description": "Transform your mind, body, and soul with holistic yoga practices",
+    "keywords": ["yoga", "meditation", "wellness", "yoga classes", "yoga teacher"],
+    "themeColor": "#f5f1e8"
+  },
+  "deployment": {
+    "vercel": {
+      "steps": [
+        "Push code to GitHub",
+        "Connect repository at vercel.com",
+        "Vercel auto-detects and builds"
+      ]
+    },
+    "netlify": {
+      "steps": [
+        "Run 'npm run build'",
+        "Upload 'dist' folder to Netlify",
+        "Or connect GitHub for auto-deploy"
+      ]
+    },
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist"
+  },
+  "performanceTips": [
+    "Optimize images before upload",
+    "Use WebP format for images",
+    "Enable GZIP compression on server",
+    "Use CDN for static assets",
+    "Minify CSS and JavaScript",
+    "Cache images and fonts"
+  ]
+}

@@ -1,0 +1,173 @@
+.about {
+  background-color: var(--bg-secondary);
+  padding: clamp(60px, 8vw, 100px) 0;
+}
+
+/* Layout */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 70px);
+  align-items: center;
+}
+
+/* Text Section */
+.about-text h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 14px;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+}
+
+.about-text h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 56px;
+  height: 3px;
+  background-color: var(--accent-warm);
+  border-radius: 2px;
+}
+
+.about-text p {
+  margin-bottom: 18px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  font-size: clamp(0.95rem, 2.2vw, 1rem);
+}
+
+/* Credentials */
+.credentials {
+  background-color: #fff;
+  padding: clamp(20px, 4vw, 32px);
+  border-radius: 14px;
+  margin: 28px 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.credentials h3 {
+  color: var(--primary-color);
+  margin-bottom: 18px;
+  font-size: clamp(1.15rem, 2.8vw, 1.3rem);
+}
+
+.credentials ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.credentials li {
+  padding: 10px 0 10px 28px;
+  position: relative;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.credentials li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Philosophy */
+.philosophy {
+  background: linear-gradient(
+    135deg,
+    rgba(212, 165, 116, 0.12),
+    rgba(168, 196, 168, 0.12)
+  );
+  padding: clamp(20px, 4vw, 30px);
+  border-radius: 14px;
+  border-left: 4px solid var(--accent-warm);
+}
+
+.philosophy h3 {
+  color: var(--primary-color);
+  margin-bottom: 14px;
+  font-size: clamp(1.15rem, 2.8vw, 1.3rem);
+}
+
+.philosophy p {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-style: italic;
+  font-size: clamp(0.95rem, 2.2vw, 1rem);
+}
+
+/* Values Cards */
+.about-values {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+.value-card {
+  background-color: #fff;
+  padding: clamp(22px, 4vw, 30px);
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.value-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-6px);
+}
+
+.value-icon {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: var(--primary-color);
+  margin-bottom: 14px;
+}
+
+.value-card h4 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+}
+
+.value-card p {
+  color: var(--text-secondary);
+  font-size: clamp(0.9rem, 2.2vw, 0.95rem);
+  line-height: 1.6;
+}
+
+/* 📱 Tablet */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-values {
+    gap: 18px;
+  }
+
+  .credentials,
+  .philosophy {
+    margin-top: 20px;
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 480px) {
+  .about {
+    padding: 50px 0;
+  }
+
+  .about-text h2::after {
+    width: 44px;
+  }
+
+  .value-card {
+    border-radius: 14px;
+  }
+}

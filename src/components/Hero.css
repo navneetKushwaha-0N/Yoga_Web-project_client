@@ -1,0 +1,283 @@
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  height: min(90vh, 650px);
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  animation: heroFade 0.8s ease-out;
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* ================= SLIDES ================= */
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 10;
+}
+
+/* Overlay */
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.55)
+  );
+}
+
+/* ================= CONTENT ================= */
+.slide-content {
+  position: relative;
+  z-index: 20;
+  text-align: center;
+  color: #fff;
+  max-width: 680px;
+  padding: 24px;
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-title {
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.slide-quote {
+  font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+  margin-bottom: 28px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ================= BUTTONS ================= */
+.slide-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.slide-buttons .btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.slide-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* WhatsApp */
+.btn-primary {
+  background: linear-gradient(135deg, #25d366, #1ebe5d);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.btn-primary:hover::after {
+  transform: translateX(0);
+}
+
+/* ================= CONTROLS ================= */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Pulse on hover */
+.carousel-btn:hover {
+  animation: pulse 1.8s infinite;
+  transform: translateY(-50%) scale(1.15);
+}
+
+.carousel-btn-prev {
+  left: 16px;
+}
+
+.carousel-btn-next {
+  right: 16px;
+}
+
+/* ================= DOTS ================= */
+.carousel-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+}
+
+.dot.active {
+  width: 26px;
+  border-radius: 6px;
+  background: #fff;
+}
+
+/* ================= AUTOPLAY ================= */
+.autoplay-toggle {
+  position: absolute;
+  bottom: 18px;
+  right: 16px;
+  z-index: 30;
+}
+
+.toggle-btn {
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+  }
+
+  .slide-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .slide-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ✅ Mobile prev / next size + position */
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    top: auto;
+    bottom: 50px;
+    transform: none;
+  }
+
+  .carousel-btn-prev {
+    left: 14px;
+  }
+
+  .carousel-btn-next {
+    right: 14px;
+  }
+
+  .carousel-btn:hover {
+    transform: scale(1.12);
+  }
+
+  /* ❌ Hide autoplay button on mobile */
+  .autoplay-toggle {
+    display: none;
+  }
+}
+
+/* ================= SMALL PHONES ================= */
+@media (max-width: 480px) {
+  .hero {
+    height: 65vh;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.05rem;
+    bottom: 42px;
+  }
+
+  .carousel-dots {
+    bottom: 12px;
+  }
+}
