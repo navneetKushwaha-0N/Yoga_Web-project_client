@@ -1,0 +1,210 @@
+.sessions {
+  background-color: var(--bg-secondary);
+}
+
+.section-title {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  position: relative;
+  padding-bottom: 20px;
+  font-size: 2rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--accent-warm);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+.sessions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0;
+}
+
+.session-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.session-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-warm);
+}
+
+.session-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-8px);
+}
+
+.session-icon {
+  font-size: 2rem;
+  color: var(--accent-warm);
+  margin-bottom: 15px;
+}
+
+.session-name {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.session-description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.session-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-light);
+}
+
+.session-price {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.btn-book {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-book:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-book:active {
+  transform: translateY(0);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .sessions-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .session-card {
+    padding: 20px;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .session-name {
+    font-size: 1.2rem;
+  }
+
+  .session-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .btn-book {
+    width: 100%;
+  }
+
+  .session-price {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .sessions-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .session-card {
+    padding: 15px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .session-icon {
+    font-size: 1.5rem;
+  }
+
+  .session-name {
+    font-size: 1.1rem;
+  }
+
+  .session-description {
+    font-size: 0.9rem;
+    -webkit-line-clamp: 2;
+  }
+
+  .session-footer {
+    flex-direction: column;
+  }
+
+  .btn-book {
+    width: 100%;
+  }
+}
